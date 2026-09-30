@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-label="Star-Yi Arc &#x9879;&#x76EE;&#x4E2D;&#x6587;&#x603B;&#x89C8;">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F8FAFC"/>
+      <stop offset="100%" stop-color="#EEF2FF"/>
+    </linearGradient>
+    <linearGradient id="hero" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#312E81"/>
+      <stop offset="100%" stop-color="#3B5BDB"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect x="48" y="40" width="1504" height="148" rx="20" fill="url(#hero)"/>
+  <text x="800" y="100" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif" font-size="40" font-weight="700" fill="#FFFFFF">Star-Yi Arc  Kotlin &#x591A;&#x6A21;&#x5757;&#x540E;&#x53F0;</text>
+  <text x="800" y="150" text-anchor="middle" font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif" font-size="22" fill="#C7D2FE">Gradle &#xB7; Spring Boot 4 &#xB7; Jimmer &#xB7; Sa-Token &#xB7; PostgreSQL</text>
+  <g font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+    <rect x="48" y="224" width="480" height="390" rx="18" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="2"/>
+    <rect x="48" y="224" width="480" height="72" rx="18" fill="#3B5BDB"/>
+    <rect x="48" y="270" width="480" height="26" fill="#3B5BDB"/>
+    <text x="288" y="268" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">&#x542F;&#x52A8;&#x5BBF;&#x4E3B;  yi-admin</text>
+    <text x="88" y="348" font-size="22" fill="#1E293B">&#x552F;&#x4E00;&#x53EF;&#x542F;&#x52A8;&#x7684; Spring Boot &#x5165;&#x53E3;</text>
+    <text x="88" y="396" font-size="22" fill="#1E293B">&#x767B;&#x5F55;&#x9274;&#x6743;&#x3001;JWT&#x3001;&#x7BA1;&#x7406;&#x540E;&#x53F0;</text>
+    <text x="88" y="444" font-size="22" fill="#1E293B">&#x7528;&#x6237;&#x3001;&#x89D2;&#x8272;&#x3001;&#x6743;&#x9650;&#x3001;&#x767B;&#x5F55;&#x65E5;&#x5FD7;</text>
+    <text x="88" y="492" font-size="22" fill="#1E293B">&#x626B;&#x63CF; com.star&#xFF0C;&#x805A;&#x5408;&#x4E1A;&#x52A1; JAR</text>
+    <text x="88" y="556" font-size="18" fill="#64748B">&#x7AEF;&#x53E3; 8500  &#xB7;  &#x542F;&#x52A8;&#x7C7B; YiAdminApplication</text>
+    <rect x="560" y="224" width="480" height="390" rx="18" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="2"/>
+    <rect x="560" y="224" width="480" height="72" rx="18" fill="#4338CA"/>
+    <rect x="560" y="270" width="480" height="26" fill="#4338CA"/>
+    <text x="800" y="268" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">&#x516C;&#x5171;&#x80FD;&#x529B;  yi-common</text>
+    <text x="600" y="348" font-size="22" fill="#1E293B">&#x6CE8;&#x89E3;&#x5F0F;&#x901A;&#x7528; CRUD</text>
+    <text x="600" y="396" font-size="22" fill="#1E293B">&#x7BA1;&#x7406;&#x9875;&#x5951;&#x7EA6; AdminPageModule</text>
+    <text x="600" y="444" font-size="22" fill="#1E293B">&#x5206;&#x9875;&#x3001;&#x5F02;&#x5E38;&#x3001;&#x7CFB;&#x7EDF;&#x5B9E;&#x4F53;</text>
+    <text x="600" y="492" font-size="22" fill="#1E293B">&#x7528;&#x6237;&#x3001;&#x89D2;&#x8272;&#x3001;&#x6743;&#x9650;&#x3001;&#x767B;&#x5F55;&#x65E5;&#x5FD7;&#x8868;</text>
+    <text x="600" y="556" font-size="18" fill="#64748B">&#x5E93;&#x6A21;&#x5757;  &#xB7;  &#x4E0D;&#x80FD;&#x5355;&#x72EC;&#x542F;&#x52A8;</text>
+    <rect x="1072" y="224" width="480" height="390" rx="18" fill="#FFFFFF" stroke="#C7D2FE" stroke-width="2"/>
+    <rect x="1072" y="224" width="480" height="72" rx="18" fill="#0F766E"/>
+    <rect x="1072" y="270" width="480" height="26" fill="#0F766E"/>
+    <text x="1312" y="268" text-anchor="middle" font-size="26" font-weight="700" fill="#FFFFFF">&#x4E1A;&#x52A1;&#x793A;&#x4F8B;  yi-demo</text>
+    <text x="1112" y="348" font-size="22" fill="#1E293B">&#x6F14;&#x793A;&#x516C;&#x544A;&#xFF0C;&#x4E00;&#x4E2A; Controller</text>
+    <text x="1112" y="396" font-size="22" fill="#1E293B">REST  /demo/notices</text>
+    <text x="1112" y="444" font-size="22" fill="#1E293B">&#x7BA1;&#x7406;&#x9875;  /admin/demo/notices</text>
+    <text x="1112" y="492" font-size="22" fill="#1E293B">&#x5B9E;&#x4F53;&#x3001;&#x63A5;&#x53E3;&#x3001;&#x6A21;&#x677F;&#x90FD;&#x5728;&#x672C; JAR</text>
+    <text x="1112" y="556" font-size="18" fill="#64748B">&#x4E1A;&#x52A1; JAR  &#xB7;  &#x6309;&#x5B83;&#x590D;&#x5236;&#x5373;&#x53EF;</text>
+  </g>
+  <g font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+    <rect x="48" y="648" width="232" height="56" rx="28" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <text x="164" y="683" text-anchor="middle" font-size="20" fill="#1E293B">&#x7528;&#x6237;&#x6743;&#x9650;</text>
+    <rect x="296" y="648" width="232" height="56" rx="28" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <text x="412" y="683" text-anchor="middle" font-size="20" fill="#1E293B">&#x8D85;&#x7EA7;&#x7BA1;&#x7406;</text>
+    <rect x="544" y="648" width="232" height="56" rx="28" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <text x="660" y="683" text-anchor="middle" font-size="20" fill="#1E293B">&#x6CE8;&#x89E3; CRUD</text>
+    <rect x="792" y="648" width="232" height="56" rx="28" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <text x="908" y="683" text-anchor="middle" font-size="20" fill="#1E293B">&#x7BA1;&#x7406;&#x540E;&#x53F0;</text>
+    <rect x="1040" y="648" width="232" height="56" rx="28" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <text x="1156" y="683" text-anchor="middle" font-size="20" fill="#1E293B">OpenAPI</text>
+    <rect x="1288" y="648" width="264" height="56" rx="28" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <text x="1420" y="683" text-anchor="middle" font-size="20" fill="#1E293B">PostgreSQL</text>
+  </g>
+  <g font-family="Microsoft YaHei, PingFang SC, Noto Sans SC, sans-serif">
+    <rect x="48" y="732" width="1504" height="124" rx="18" fill="#FFFFFF" stroke="#C7D2FE"/>
+    <text x="80" y="784" font-size="22" font-weight="700" fill="#312E81">&#x6280;&#x672F;&#x6808;</text>
+    <text x="80" y="824" font-size="20" fill="#334155">Kotlin &#xB7; JDK 21 &#xB7; Gradle &#xB7; Spring Boot 4.1.1 &#xB7; Jimmer 0.12.2 &#xB7; Sa-Token 1.46.0 &#xB7; PostgreSQL &#xB7; Redis &#xB7; Thymeleaf</text>
+  </g>
+</svg>
