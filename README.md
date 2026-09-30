@@ -1,6 +1,17 @@
-# Star-Yi Arc
+<h1 align="center">Star-Yi Arc</h1>
 
-基于 **Kotlin + Gradle + Spring Boot 4 + Jimmer + Sa-Token** 的模块化后台。它和 Java 版 [Star-Yi](https://github.com/Star-yb/Star-Yi) 并列：通用增删改查收成一个 Controller，管理页按路径高亮，默认数据库是 MySQL。
+<p align="center">
+  <strong>Kotlin 版模块化后台</strong> · 与 Java 版 <a href="https://github.com/Star-yb/Star-Yi">Star-Yi</a> 并列，通用增删改查收成一个 Controller，管理页按路径高亮，默认数据库是 MySQL
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Kotlin-2.3.21-7F52FF?logo=kotlin&logoColor=white" alt="Kotlin">
+  <img src="https://img.shields.io/badge/Gradle-Kotlin%20DSL-02303A?logo=gradle&logoColor=white" alt="Gradle">
+  <img src="https://img.shields.io/badge/Spring%20Boot-4.1.1-6DB33F?logo=springboot&logoColor=white" alt="Spring Boot">
+  <img src="https://img.shields.io/badge/Jimmer-0.12.2-111111" alt="Jimmer">
+  <img src="https://img.shields.io/badge/MySQL-8-4479A1?logo=mysql&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-informational" alt="Platform">
+</p>
 
 ![Star-Yi Arc 项目中文总览](docs/assets/project-overview-zh.svg)
 
