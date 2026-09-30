@@ -76,7 +76,7 @@ class UsersDao(
 
     /**
      * 按主键更新用户。目标行不存在时返回 400。
-     * 密码和状态不在这个入参里，分别走 updatePassword、updateStatus。
+     * 密码、状态、最近登录时间不在这个入参里，分别走 updatePassword、updateStatus、updateLastLoginTime。
      */
     fun update(input: UserUpdateInputView, fetcher: Fetcher<Users>?): Users {
         val result = saveCommand(input) {

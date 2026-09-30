@@ -1,10 +1,11 @@
--- Star-Yi 的 MySQL 脚本，保留在本仓库。运行 Star-Yi Arc 请用 sql/sql.sql（PostgreSQL）。
--- 数据顺序与 PostgreSQL 脚本相同，可以停在某一段：
+-- Star-Yi Arc 的 MySQL 脚本，默认使用这一份。
+-- 改用 PostgreSQL 时执行 sql/pgsql.sql，并修改 application.properties 里的连接和 jimmer.dialect。
+-- 数据按段排列，可以停在某一段：
 -- 1. 结构
 -- 2. 角色与权限
 -- 3. 超级管理员 admin
 -- 4. 普通用户
--- 演示公告表放在最后。不用 yi-demo 时可以不执行。
+-- 演示公告表 demo_notice 放在最后。不用 yi-demo 时可以不执行。
 
 -- ========================
 -- 1. 结构

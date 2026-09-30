@@ -10,7 +10,7 @@
 | `dto/DemoNotice.dto` | 查看、创建、更新、查询条件 |
 | `controller/DemoNoticeController.kt` | `@CrudAll`，并覆盖了详情 |
 
-建表语句在 `sql/sql.sql` 最后一段。改了 `.dto` 而没有改 Kotlin 文件时，要执行 `gradle :yi-demo:kspKotlin`，否则生成类不会更新。
+建表语句在 `sql/mysql.sql` 最后一段。改用 PostgreSQL 时，同一张表在 `sql/pgsql.sql` 末尾。改了 `.dto` 而没有改 Kotlin 文件时，要执行 `gradle :yi-demo:kspKotlin`，否则生成类不会更新。
 
 ## 1. 实体
 

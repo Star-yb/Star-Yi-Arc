@@ -40,7 +40,7 @@ flowchart TD
   open --> rest
   page --> tpl["yi-admin 的 templates\n或业务 JAR 的 admin/"]
   rest --> data["手写 Service / Dao\n或 JimmerCrudResource"]
-  data --> db["PostgreSQL"]
+  data --> db["MySQL"]
   rest --> redis["Redis\n会话和普通账号的角色权限"]
 ```
 
@@ -52,7 +52,7 @@ flowchart TD
 | 鉴权 | `SaTokenConfigure`、`StpInterfaceImpl` | 登录校验；后台再要求角色 `*` |
 | REST | `*Controller` | 返回 `SaResult`。用户、角色、权限手写；标准资源继承 `JimmerCrudResource` |
 | 管理页 | `@Controller` + Thymeleaf | `/admin/**`。侧栏来自 `AdminPageModule` |
-| 数据 | Jimmer + PostgreSQL | 实体接口，`.dto` 生成查看、入参和查询条件 |
+| 数据 | Jimmer + MySQL（默认） | 实体接口，`.dto` 生成查看、入参和查询条件。改用 PostgreSQL 时执行 `sql/pgsql.sql` 并改连接 |
 | 缓存 | Redis | Sa-Token 会话；普通账号的角色和权限 |
 
 后台 Cookie 和接口 token 是两套会话，设备分别是 `admin-web` 和 `api`。
@@ -111,4 +111,4 @@ REST 返回 `SaResult`。可预期的失败抛 `BusinessException`，由 `Global
 
 可运行配置只写在 `yi-admin` 的 `application.properties`。库模块不要再放一份同名文件。
 
-建表用手工 SQL，没有 Flyway。当前库是 PostgreSQL，脚本是 `sql/sql.sql`。
+建表用手工 SQL，没有 Flyway。默认数据库是 MySQL，脚本是 `sql/mysql.sql`。`sql/pgsql.sql` 提供同一套表，改连接信息和 `jimmer.dialect` 后可以切换。

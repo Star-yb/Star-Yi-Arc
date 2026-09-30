@@ -16,6 +16,7 @@ dependencies {
     "implementation"("org.springframework.boot:spring-boot-starter-thymeleaf")
     "implementation"("org.apache.commons:commons-pool2")
     "implementation"("com.alibaba:druid-spring-boot-starter:1.2.16")
+    "runtimeOnly"("com.mysql:mysql-connector-j")
     "runtimeOnly"("org.postgresql:postgresql")
     "implementation"("cn.dev33:sa-token-jwt:1.46.0")
     "implementation"("cn.dev33:sa-token-thymeleaf:1.46.0")

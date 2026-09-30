@@ -121,7 +121,7 @@ src/main/resources
 |------|------|
 | `yi-common`、`yi-demo` | 公共库和演示公告 |
 | `spring-boot-starter-thymeleaf` | 管理页 |
-| `spring-boot-starter-jdbc`、`postgresql`、Druid | PostgreSQL |
+| `spring-boot-starter-jdbc`、`mysql-connector-j`、`postgresql`、Druid | 默认 MySQL，PostgreSQL 驱动留着以便切换 |
 | `sa-token-jwt`、`sa-token-thymeleaf`、`sa-token-redis-template` | JWT、页面标签、Redis 会话 |
 | `springdoc-openapi-starter-webmvc-ui` | Swagger |
 | `jackson-module-kotlin` | 反序列化 Kotlin data class |

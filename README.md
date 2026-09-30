@@ -1,6 +1,6 @@
 # Star-Yi Arc
 
-基于 **Kotlin + Gradle + Spring Boot 4 + Jimmer + Sa-Token** 的模块化后台。它和 Java 版 [Star-Yi](https://github.com/Star-yb/Star-Yi) 并列：通用增删改查收成一个 Controller，管理页按路径高亮，数据库使用 PostgreSQL。
+基于 **Kotlin + Gradle + Spring Boot 4 + Jimmer + Sa-Token** 的模块化后台。它和 Java 版 [Star-Yi](https://github.com/Star-yb/Star-Yi) 并列：通用增删改查收成一个 Controller，管理页按路径高亮，默认数据库是 MySQL。
 
 ![Star-Yi Arc 项目中文总览](docs/assets/project-overview-zh.svg)
 
@@ -11,7 +11,7 @@
 | 框架 | Spring Boot **4.1.1** |
 | ORM | Jimmer **0.12.2**（KSP） |
 | 鉴权 | Sa-Token **1.46.0**（JWT） |
-| 数据库 | PostgreSQL |
+| 数据库 | MySQL（默认）。`sql/pgsql.sql` 可切换 |
 | 缓存 | Redis |
 | 管理端 | Thymeleaf SSR（`/admin/**`） |
 | 接口文档 | springdoc-openapi / Swagger UI |
@@ -36,10 +36,10 @@ Java 版 Star-Yi 仍是对照本。Arc 沿用同一套模块边界，下面这�
 | 方面 | Arc |
 |------|-----|
 | 语言和构建 | Kotlin、Gradle、Jimmer KSP。没有 Lombok |
-| 数据库 | PostgreSQL。MySQL 脚本留在 `sql/mysql.sql` |
+| 数据库 | 与 Java 版相同：默认 MySQL，另有 `sql/pgsql.sql` |
 | 通用 CRUD | 一个 Controller 加上注解 |
 | 管理页 | 当前页按路径匹配菜单，模板不再手写高亮键 |
-| 建库脚本 | `sql/pgsql.sql` 按结构、角色权限、超级管理员、普通用户分段，公告表在最后 |
+| 建库脚本 | `sql/mysql.sql` 按结构、角色权限、超级管理员、普通用户分段，公告表在最后 |
 
 ---
 
@@ -52,8 +52,8 @@ Star-Yi-Arc/                父工程：版本、KSP、Jimmer
 ├── yi-admin/               启动入口（com.star.YiAdminApplication）
 ├── yi-common/              公共能力：异常、分页、CRUD、管理页契约、系统实体
 ├── yi-demo/                注解 CRUD + 管理页示例（演示公告）
-├── sql/pgsql.sql           PostgreSQL，当前使用
-├── sql/mysql.sql           保留的 MySQL 脚本
+├── sql/mysql.sql           默认建库脚本（MySQL），末尾是演示公告表
+├── sql/pgsql.sql           PostgreSQL 脚本，改连接后可切换
 └── docs/                   专题文档
 ```
 
@@ -77,7 +77,7 @@ Star-Yi-Arc/                父工程：版本、KSP、Jimmer
 
 - JDK **21**
 - 本机已安装的 `gradle`（仓库里没有 Wrapper）
-- PostgreSQL（库名、地址与 `application.properties` 一致）
+- MySQL 8（库名、地址与 `application.properties` 一致，默认库 `star_yi`）
 - Redis（本机 `6379`，库号见配置）
 
 Kotlin 实体和 DTO 由 KSP 生成。没编译就打开生成类型时，IDE 会报找不到类。先执行：
@@ -92,10 +92,10 @@ gradle :yi-admin:compileKotlin
 
 ### 1. 建库
 
-创建配置里的 PostgreSQL 数据库，执行：
+默认数据库是 MySQL。创建数据库后执行：
 
 ```text
-sql/pgsql.sql
+sql/mysql.sql
 ```
 
 脚本按四段排列。执行到哪一段，库里就只有到那一段为止的内容。
@@ -111,7 +111,7 @@ sql/pgsql.sql
 
 `jimmer.database-validation-mode` 是 `ERROR`。表或列和实体不一致时，进程起不来。
 
-`sql/mysql.sql` 是保留的 MySQL 脚本，分段方式相同。当前工程连的是 PostgreSQL。
+改用 PostgreSQL 时，执行 `sql/pgsql.sql`，并把 `application.properties` 里的数据源和 `jimmer.dialect` 换成 PostgreSQL。两份脚本的表和数据相同，差别只在字段类型。MySQL 和 PostgreSQL 的驱动都已经带上。
 
 ### 2. 配置
 
@@ -152,8 +152,8 @@ HTTP
       /admin/**                 登录，并且角色是 *
       其他 REST                 请求头 satoken
   → Controller
-      用户 / 角色 / 权限        Service → Dao → Jimmer → PostgreSQL
-      注解 CRUD（如演示公告）   JimmerCrudResource → Jimmer → PostgreSQL
+      用户 / 角色 / 权限        Service → Dao → Jimmer → MySQL
+      注解 CRUD（如演示公告）   JimmerCrudResource → Jimmer → MySQL
 ```
 
 | 入口 | 会话 | 作用 |
@@ -165,7 +165,7 @@ HTTP
 
 普通账号只加载状态为 `0` 的角色和权限。角色或权限被禁用后，下一次鉴权就不再带上它们。缓存键由 `SaAuthCache` 维护。用户改角色、角色改权限或权限本身变更时，对应 Service 会清掉相关缓存。
 
-`sql/pgsql.sql` 里的权限树是业务权限码，供接口鉴权使用。后台侧栏不读这张表，侧栏来自 `AdminPageModule`。
+`sql/mysql.sql` 里的权限树是业务权限码，供接口鉴权使用。后台侧栏不读这张表，侧栏来自 `AdminPageModule`。
 
 ---
 

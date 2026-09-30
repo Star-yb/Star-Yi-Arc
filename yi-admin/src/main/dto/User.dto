@@ -23,6 +23,9 @@ input UserUpdateInputView {
     #allScalars(this)?
     -password
     -status
+    // 最近登录时间只由登录流程写入。编辑资料不传这个字段时，静态入参会把它当成 null。
+    // PostgreSQL 的批量更新会把这个空值推断成 text，无法写进 timestamp 列。
+    -lastLoginTime
     id?
 
 }
