@@ -1,0 +1,56 @@
+/*
+ * 只改了这个 dto、没有改其它 Kotlin 文件时，IDE 点运行不会重新生成。
+ * 需要显式 Rebuild，或执行 gradle :yi-admin:kspKotlin。
+ */
+
+export com.star.identity.entity.Permissions
+    -> package com.star.admin.dto
+
+PermissionsView {
+    #allScalars
+    roles {
+        id
+        roleName
+    }
+    -deletedTime
+}
+
+PermissionsTreeView {
+    #allScalars
+    roles {
+        id
+        roleName
+    }
+    childPermissions*
+    -deletedTime
+}
+
+input PermissionCreateInputView {
+    #allScalars(this)?
+    permissionCode
+    permissionName
+    id(parent) as parentId
+}
+
+dynamic input PermissionUpdateInputView {
+    #allScalars(this)?
+    permissionCode
+    permissionName
+    id?
+    -status
+}
+
+specification PermissionSpecification {
+    like/i(permissionCode)
+    like/i(permissionName)
+    flat(parent) {
+        id as parentId
+    }
+    flat(childPermissions) {
+        id as childId
+    }
+    flat(roles) {
+        id as roleId
+    }
+    status
+}

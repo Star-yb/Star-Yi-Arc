@@ -1,0 +1,46 @@
+/*
+ * 只改了这个 dto、没有改其它 Kotlin 文件时，IDE 点运行不会重新生成。
+ * 需要显式 Rebuild，或执行 gradle :yi-admin:kspKotlin。
+ */
+
+export com.star.identity.entity.Users
+    -> package com.star.admin.dto
+
+
+UsersView {
+    #allScalars
+    -deletedTime
+    -password
+
+}
+input UserCreateInputView {
+    #allScalars(this)?
+    username
+}
+
+
+input UserUpdateInputView {
+    #allScalars(this)?
+    -password
+    -status
+    id?
+
+}
+
+//修改用户角色
+dynamic  input  UserRoleUpdateInputView {
+    id
+    id(roles ) as roleIds
+}
+
+
+specification UserSpecification {
+    like/i(username)
+    like/i(nickname)
+    like/i^(email)
+    status
+    superAdmin
+    flat(roles) {
+        id as roleId
+    }
+}
