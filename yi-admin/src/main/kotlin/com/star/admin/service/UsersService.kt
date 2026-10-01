@@ -30,7 +30,10 @@ interface UsersService {
     /** 启用用户，状态改为 0。 */
     fun enableUser(id: Long)
 
-    /** 禁用用户，状态改为 1。 */
+    /**
+     * 禁用用户，状态改为 1。
+     * 同时注销该账号在各个端已经发出的全部 token。
+     */
     fun disableUser(id: Long)
 
     fun updateRole(input: UserRoleUpdateInputView): Int

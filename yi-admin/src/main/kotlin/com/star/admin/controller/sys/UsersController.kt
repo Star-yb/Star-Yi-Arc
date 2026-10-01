@@ -88,7 +88,7 @@ class UsersController(
         return SaResult.ok("修改成功")
     }
 
-    @Operation(summary = "禁用用户")
+    @Operation(summary = "禁用用户", description = "状态改为禁用，并注销该账号全部已登录会话")
     @PostMapping("/{id}/disable")
     fun disableStatus(@PathVariable id: Long): SaResult {
         usersService.disableUser(id)

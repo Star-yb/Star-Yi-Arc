@@ -229,7 +229,7 @@ HTTP
 | GET | `/users/myInfo` | 当前登录用户 |
 | POST | `/users/changePassword` | 修改自己的密码，请求体是 `oldPassword`、`newPassword` |
 | POST | `/users/{id}/enable` | 启用 |
-| POST | `/users/{id}/disable` | 禁用 |
+| POST | `/users/{id}/disable` | 禁用，并注销该账号全部已登录会话 |
 | GET | `/users/roles/{id}` | 用户的角色 |
 | PUT | `/users/{id}/roles` | 改角色 |
 | POST | `/users/{id}/resetPassword` | 重置为 `123456` |

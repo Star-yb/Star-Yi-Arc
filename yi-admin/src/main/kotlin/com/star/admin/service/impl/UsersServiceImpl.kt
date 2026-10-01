@@ -1,5 +1,6 @@
 package com.star.admin.service.impl
 
+import cn.dev33.satoken.stp.StpUtil
 import com.star.admin.auth.SaAuthCache
 import com.star.admin.dao.UsersDao
 import com.star.admin.dto.UserCreateInputView
@@ -55,6 +56,8 @@ class UsersServiceImpl(
 
     override fun disableUser(id: Long) {
         usersDao.updateStatus(id, 1)
+        // 不指定设备类型，api 与 admin-web 上的会话一起注销。
+        StpUtil.logout(id)
     }
 
     override fun changePassword(userId: Long, oldPassword: String, newPassword: String) {
