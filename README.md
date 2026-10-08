@@ -18,7 +18,7 @@
 | 项 | 值 |
 |----|-----|
 | 语言 | Kotlin，JDK **21** |
-| 构建 | Gradle（本机已安装，仓库不含 Wrapper） |
+| 构建 | Gradle|
 | 框架 | Spring Boot **4.1.1** |
 | ORM | Jimmer **0.12.2**（KSP） |
 | 鉴权 | Sa-Token **1.46.0**（JWT） |
